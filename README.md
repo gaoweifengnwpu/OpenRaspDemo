@@ -62,3 +62,5 @@ ElasticSearch 负载均衡
 Tomcat 服务器安装
 如果你要开启远程管理，请先参考 管理后台 - 添加主机 文档，找到 app_id/app_secret/backend_url 三个关键参数，然后执行如下命令
 java -jar RaspInstall.jar -install <tomcat_root> -backendurl http://XXX -appsecret XXX -appid XXX
+
+然后重启tomcat容器
