@@ -67,4 +67,5 @@ agent服务器安装
 java -jar RaspInstall.jar -install <tomcat_root> -backendurl http://XXX -appsecret XXX -appid XXX
 然后重启tomcat容器
 ![image](https://user-images.githubusercontent.com/35843926/119291517-27d4e980-bc81-11eb-9511-f634cec92d27.png)
+![Uploading image.png…]()
 
