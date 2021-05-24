@@ -21,3 +21,5 @@ javaagent是一个JVM的“插件”。 在java运行命令中 javaagent是一�
 
 
 -javaagent:D:\OpenRaspDemo\target\agent.jar
+#openrasp官方文档
+https://rasp.baidu.com/doc/install/testcase.html
