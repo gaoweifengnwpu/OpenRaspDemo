@@ -58,3 +58,7 @@ ElasticSearch 版本大于等于 5.6，小于 7.0 (ES 7.X 变化较大，暂无�
 
 ElasticSearch 负载均衡
 在使用ES集群时，EsAddr 填写一个服务器的地址即可。我们自动会调用 /_nodes/ 接口获取全部服务器信息并轮询，以避免单点问题。
+
+Tomcat 服务器安装
+如果你要开启远程管理，请先参考 管理后台 - 添加主机 文档，找到 app_id/app_secret/backend_url 三个关键参数，然后执行如下命令
+java -jar RaspInstall.jar -install <tomcat_root> -backendurl http://XXX -appsecret XXX -appid XXX
