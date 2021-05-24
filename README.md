@@ -68,4 +68,5 @@ java -jar RaspInstall.jar -install <tomcat_root> -backendurl http://XXX -appsecr
 然后重启tomcat容器
 ![image](https://user-images.githubusercontent.com/35843926/119291517-27d4e980-bc81-11eb-9511-f634cec92d27.png)
 ![image](https://user-images.githubusercontent.com/35843926/119291589-4a670280-bc81-11eb-9819-b0435788a59d.png)
+![image](https://user-images.githubusercontent.com/35843926/119291795-ab8ed600-bc81-11eb-8f7f-57afdc67947e.png)
 
