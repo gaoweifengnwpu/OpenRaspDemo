@@ -5,9 +5,13 @@
 
 
 1、git init   
+
 2、git add .
+
 3、git commit -m "提交描述"
+
 4、git remote add origin https://github.com/MyJoanna/test.git   （这里的 https://github.com/MyJoanna/test.git 是你的仓库地址）
+
 5、git push -u origin master 
 
 fortify使用   
