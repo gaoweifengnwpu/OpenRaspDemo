@@ -1,4 +1,3 @@
-# git提交代码
 ![image](https://user-images.githubusercontent.com/35843926/120261075-c25caa80-c2c9-11eb-826c-67dc13a78e7a.png)
 1、git init   
 2、git add .
