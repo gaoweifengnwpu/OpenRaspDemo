@@ -1,4 +1,4 @@
-package burp;
+package burp.test;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
