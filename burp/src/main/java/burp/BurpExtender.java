@@ -5,6 +5,10 @@ import burp.ui.SendExpGui;
 
 import java.awt.*;
 import java.io.PrintWriter;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import burp.ui.Tools;
 
 //IHttpListener
 //
@@ -14,14 +18,18 @@ import java.io.PrintWriter;
 public class BurpExtender implements IBurpExtender, ITab, IHttpListener {
 
     private IBurpExtenderCallbacks callbacks;
-    public PrintWriter stdout;
     private SendExpGui send;
+    // obtain our output and error streams
+    PrintWriter stdout;
+    PrintWriter stderr;
 
     @Override
     public void registerExtenderCallbacks(IBurpExtenderCallbacks callbacks) {
         this.callbacks = callbacks;
+        this.stdout = new PrintWriter(callbacks.getStdout(), true);
+        this.stderr = new PrintWriter(callbacks.getStderr(), true);
         //插件名称
-        callbacks.setExtensionName("gwf");
+        callbacks.setExtensionName("高尉峰");
         send = new SendExpGui(this);
         callbacks.addSuiteTab(this);
         callbacks.registerHttpListener(this);
@@ -47,7 +55,28 @@ public class BurpExtender implements IBurpExtender, ITab, IHttpListener {
             IHttpService httpService = messageInfo.getHttpService();
             if (httpService.getPort() == 3111) {
                 byte[] request = messageInfo.getRequest();
-                send.appendOutput(new String(request));
+                // 按指定模式在字符串查找
+                String line1 = new String(request);
+//                String line1 = "GET / HTTP/1.1\n" +
+//                        "Host: 192.30.3.158:3111\n" +
+//                        "Cookie: d2admin-1.20.1-lang=zh-chs\n";
+                //去掉左右换行字符
+                String line = Tools.trimN(line1);
+
+//                System.out.println(line);
+                String pattern = "(.*)\r\n(.*)";
+                // 创建 Pattern 对象
+                Pattern r = Pattern.compile(pattern);
+
+                // 现在创建 matcher 对象
+                Matcher m = r.matcher(line);
+                if (m.find()) {
+                    stdout.println(m);
+                    send.appendOutput(m.group(2)+" "+m.group(1));
+                } else {
+                    System.out.println("NO MATCH");
+                }
+
 
             }
         }
@@ -55,7 +84,7 @@ public class BurpExtender implements IBurpExtender, ITab, IHttpListener {
 
     @Override
     public String getTabCaption() {
-        return "gwf1";
+        return "Api";
     }
 
     @Override

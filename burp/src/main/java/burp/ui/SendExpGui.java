@@ -1,6 +1,7 @@
 package burp.ui;
 
 import burp.BurpExtender;
+
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -20,6 +21,7 @@ public class SendExpGui {
         clearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                output.setLength(0);
                 BurpPrint.setText("");
             }
         });
@@ -27,7 +29,6 @@ public class SendExpGui {
 
 
     public void appendOutput(String message) {
-        BurpPrint.setText("GWF");
         output.append(message);
         output.append("\n");
         BurpPrint.setText(output.toString());
@@ -85,7 +86,7 @@ public class SendExpGui {
         BurpPrint.setColumns(0);
         BurpPrint.setLineWrap(true);
         BurpPrint.setRows(0);
-        BurpPrint.setText("Burpsuit抓取的数据");
+//        BurpPrint.setText("API");
         scrollPane1.setViewportView(BurpPrint);
     }
 
