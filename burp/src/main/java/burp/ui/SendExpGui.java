@@ -27,6 +27,7 @@ public class SendExpGui {
 
 
     public void appendOutput(String message) {
+        BurpPrint.setText("GWF");
         output.append(message);
         output.append("\n");
         BurpPrint.setText(output.toString());
