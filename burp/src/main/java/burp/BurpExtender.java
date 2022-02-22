@@ -1,10 +1,13 @@
 package burp;
 
+import burp.ui.Excel;
 import burp.ui.SendExpGui;
 
 
 import java.awt.*;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -73,6 +76,10 @@ public class BurpExtender implements IBurpExtender, ITab, IHttpListener {
                 if (m.find()) {
                     stdout.println(m);
                     send.appendOutput(m.group(2)+" "+m.group(1));
+                    List<Object> data = new ArrayList<>();
+                    data.add(m.group(2));
+                    data.add(m.group(1));
+                    Excel.generateExcel(data);
                 } else {
                     System.out.println("NO MATCH");
                 }
