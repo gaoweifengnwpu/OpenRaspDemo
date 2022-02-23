@@ -1,7 +1,8 @@
 package burp.ui;
 
 import burp.BurpExtender;
-import burp.ui1.yy;
+
+import burp.para;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 
@@ -32,6 +33,13 @@ public class SendExpGui {
                 api.setText("");
             }
         });
+        certain.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                para.ip = textField1.getText();
+                para.port = textField2.getText();
+            }
+        });
     }
 
     public void appendOutput(String message) {
@@ -39,7 +47,6 @@ public class SendExpGui {
         output.append("\n");
         api.setText(output.toString());
     }
-
 
 
     {
