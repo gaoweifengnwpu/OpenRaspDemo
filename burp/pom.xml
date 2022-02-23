@@ -73,7 +73,12 @@
             <artifactId>poi</artifactId>
             <version>3.17</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.github.adedayo.intellij.sdk/annotations-java8 -->
+        <dependency>
+            <groupId>com.github.adedayo.intellij.sdk</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>142.1</version>
+        </dependency>
     </dependencies>
 
 </project>

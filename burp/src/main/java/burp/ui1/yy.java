@@ -1,29 +1,26 @@
-package burp.ui;
+package burp.ui1;
 
 import burp.BurpExtender;
-import burp.ui1.yy;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 
 import javax.swing.*;
-import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SendExpGui {
+public class yy {
     private StringBuilder output;
     private JPanel gwf;
     private JTextField textField1;
     private JTextField textField2;
     private JTextArea api;
     private JButton clearButton;
-    private JLabel show;
     private JButton certain;
     private JButton Button;
 
 
-    public SendExpGui() {
+    public yy() {
         output = new StringBuilder();
         clearButton.addActionListener(new ActionListener() {
             @Override
@@ -40,6 +37,13 @@ public class SendExpGui {
         api.setText(output.toString());
     }
 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("yy");
+        frame.setContentPane(new yy().gwf);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+    }
 
 
     {
@@ -94,4 +98,5 @@ public class SendExpGui {
     public JComponent $$$getRootComponent$$$() {
         return gwf;
     }
+
 }
